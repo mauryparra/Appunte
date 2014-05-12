@@ -1,0 +1,5 @@
+prog3_appunte:
+    resource: "@prog3AppunteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
