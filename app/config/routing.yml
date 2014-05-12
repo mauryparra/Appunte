@@ -1,5 +1,4 @@
 prog3_appunte:
-    resource: "@prog3AppunteBundle/Controller/"
-    type:     annotation
+    resource: "@prog3AppunteBundle/Resources/config/routing.yml"
     prefix:   /
 

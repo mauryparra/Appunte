@@ -1,0 +1,81 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+
+    {# CONTENEDOR PRINCIPAL #}
+    <div id="content">
+
+            {# LOGO Y BUSCADOR #}
+            <div class="header clear-fix">
+                <div class="header-logo"> 
+                    <img src="{{ asset('images/logo.jpg') }}" alt="Appunte!" />
+                </div>
+                <div class="search">
+                    <form method="get" action="http://google.com.ar" target="_blank">
+                        <div class="form-row">
+                            <label for="search-id">
+                                <img src=" {{ asset('images/search.png') }}" />
+                            </label>
+
+                            <input name="q" id="search-id" type="search" placeholder="Live Search" />
+
+                            <button type="submit" class="sf-button">
+                                <span class="border-l">
+                                    <span class="border-r">
+                                        <span class="btn-bg">OK</span>
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                   </form>
+                </div>
+            </div>
+            {# FIN LOGO Y BUSCADOR #}
+            
+
+            {# CUERPO DE PAGINA #}
+            <div class="sf-reset">
+
+                {% block menu %}
+                {% endblock %}
+
+                <div style="clear: both">
+                </div>
+
+                {# BLOQUE DE TITULOS #}
+                <div class="block">
+                    <div class="header clear-fix">
+
+                        {% block titulo %}
+                        {% endblock %}
+
+                        <form action="/Symfony/web/app_dev.php/upload">
+                            <div class="search">
+                                <button type="submit" class="sf-button">
+                                    <span class="border-l">
+                                    <span class="border-r">
+                                    <span class="btn-bg">
+                                        Subir Apunte
+                                    </span>
+                                    </span>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {# FIN BLOQUE DE TITULOS #}
+
+                {# BLOQUE PRINCIPAL #}
+                    {% block main %}
+                    {% endblock %}
+                {# FIN BLOQUE PRINCIPAL #}
+
+            <div>
+            {# FIN CUERPO DE PAGINA #}
+
+    </div>
+    {# FIN CONTENEDOR PRINCIPAL #}
+            
+{% endblock %}

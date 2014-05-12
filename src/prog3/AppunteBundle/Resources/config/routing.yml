@@ -1,0 +1,7 @@
+prog3_appunte_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: prog3AppunteBundle:Default:index }
+
+prog3_appunte_home:
+    pattern:  /
+    defaults: { _controller: prog3AppunteBundle:Home:index }

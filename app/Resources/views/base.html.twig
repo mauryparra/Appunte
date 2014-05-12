@@ -2,12 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>
+            {% block title %}
+                Appunte
+            {% endblock %}
+        </title>  
+        
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+            <link href="{{ asset('bundles/framework/css/structure.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/framework/css/body.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% endblock %}
+        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+    
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>
