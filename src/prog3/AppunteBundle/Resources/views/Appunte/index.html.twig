@@ -7,8 +7,8 @@
 
 {% block menu %}
 	<ul id="menu">
-        <li><a href="">Ingresar</a></li>
-		<li><a href="">Registrarse</a></li>
+        <li><a href="{{ path('login') }}">Ingresar</a></li>
+		<li><a href="{{ path('register') }}">Registrarse</a></li>
     </ul>
 {% endblock %}
 
@@ -33,7 +33,7 @@
 		 		</a>
 				<br><br><br>
 				<hr size="2"  />
-				<br><br>			
+				<br><br>
 			{% endif %}
 		{% endfor %}
 

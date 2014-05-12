@@ -5,3 +5,16 @@ prog3_appunte_homepage:
 prog3_appunte_home:
     pattern:  /
     defaults: { _controller: prog3AppunteBundle:Home:index }
+
+login:
+    path:     /login
+    defaults: { _controller: prog3AppunteBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+register:
+    path: /register
+
+logout:
+    path:   /logout
