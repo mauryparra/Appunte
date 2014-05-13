@@ -1,6 +1,10 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        prog3\AppunteBundle\Entity\Usuario:
+            algorithm: bcrypt
+
+    role_hierarchy:
+            ROLE_ADMIN:       ROLE_USER
 
     firewalls:
         secured_area:
@@ -13,8 +17,5 @@ security:
         - { path: ^/user/, roles: ROLE_USER }
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    jmonti: { password: 1234, roles: 'ROLE_USER' }
-                    mparra: { password: 12345, roles: 'ROLE_USER' }
+        bd_users:
+            entity: { class: prog3AppunteBundle:Usuario, property: username }
