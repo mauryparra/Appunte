@@ -259,4 +259,25 @@ class Usuario implements UserInterface, \Serializable {
     {
         return $this->apellido;
     }
+
+
+
+
+    ### RELACIONES
+
+    /**
+     * @ORM\OneToMany(targetEntity="Apunte", mappedBy="usuario")
+     */
+    protected $apunte;
+
+
+    public function __construct()
+    {
+        $this->apunte = new ArrayCollection();
+    }
+
+    public function getApunte()
+    {
+        return $this->apunte;
+    }
 }

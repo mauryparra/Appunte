@@ -199,4 +199,16 @@ class Apunte
         return $this->materia;
     }
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Usuario", inversedBy="apunte")
+     * @ORM\JoinColumn(name="Usuario_id", referencedColumnName="id")
+     */
+    protected $usuario;
+
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
 }

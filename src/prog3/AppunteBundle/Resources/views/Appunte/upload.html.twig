@@ -1,0 +1,48 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+    Appunte - Subir
+{% endblock %}
+
+
+{% block menu %}
+    <ul id="menu">
+        {{parent()}}
+        <li><a href="{{url('prog3_appunte_home')}}">Appunte Home</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block titulo %}
+    <div class="header-logo">
+        <h1>Nuevo Apunte</h1>
+    </div>
+{% endblock %}
+                        
+
+{% block main %}
+    <div class="block">
+        <table>
+            {{ form_start(form) }}
+                <td>
+                    {{ form_errors(form) }}
+                </td>
+                <td>
+                    <tr>
+                        {{ form_row(form.Nombre) }} 
+                    </tr>
+                    <br>    
+                    <tr>
+                        {{ form_row(form.Descripcion) }}
+                    </tr>
+                    <br>    
+                    <tr>
+                        {{ form_row(form.MateriaId, {'label' : 'Materia'}) }}
+                    </tr>
+                </td>
+                <br>
+                <input type="submit" name="Enviar datos">
+                {{ form_end(form) }}
+        </table>
+    </div>
+{% endblock %}

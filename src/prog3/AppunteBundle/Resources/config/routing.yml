@@ -18,3 +18,11 @@ register:
 
 logout:
     path:   /logout
+
+prog3_appunte_selected:
+    pattern:  /selected/{id}
+    defaults: { _controller: prog3AppunteBundle:Apunte:selected }
+
+prog3_appunte_upload:
+    pattern:  /upload
+    defaults: { _controller: prog3AppunteBundle:Apunte:upload }

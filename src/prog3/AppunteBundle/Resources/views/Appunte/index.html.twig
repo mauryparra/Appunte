@@ -31,11 +31,12 @@
 
 		{% for apunte in apuntes | slice (0, 10) %}
 			{% if apunte %}
-		 		<a class="p2" href="">
+		 		<a class="p2" href="{{url('prog3_appunte_selected',{'id':apunte.id})}}">
 			 		<b>Nombre:</b> {{apunte.Nombre}} <br>
 			 		<b>Materia:</b> {{apunte.getMateria().getNombre()}} <br>
 			 		<b>Fecha:</b> {{apunte.Fecha | date ('d-m-y')}} <br>
 		 		</a>
+		 		
 				<br><br><br>
 				<hr size="2"  />
 				<br><br>
