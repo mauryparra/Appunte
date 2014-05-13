@@ -25,7 +25,7 @@
 		<p> <b>Nombre del archivo:</b> {{apunte.Nombre}} </p>
 		<p> <b>Materia:</b> {{apunte.getMateria().getNombre()}} </p>
 		<p> <b>Carrera:</b> {{apunte.getMateria().getCarrera().getNombre()}} </p>
-		<p> <b>Usuario:</b>  </p>
+		<p> <b>Subido por:</b> {{apunte.getUsuario().getNombre()}}  {{apunte.getUsuario().getApellido()}}</p>
 		<p> <b>Comentario:</b> {{apunte.Descripcion}} </p>
 		<p> <b>Fecha:</b> {{apunte.Fecha | date('d-m-y')}} </p>
 	</div>
