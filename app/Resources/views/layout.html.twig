@@ -38,6 +38,15 @@
             <div class="sf-reset">
 
                 {% block menu %}
+                    <ul id="menu">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li>Bienvenido {{ app.user.nombre ~ " " ~ app.user.apellido ~ ' (' ~ app.user.username ~ ')'  }}</li>
+                            <li><a href="{{ path('logout') }}">Salir</a></li>
+                        {% else %}
+                            <li><a href="{{ path('login') }}">Ingresar</a></li>
+                            <li><a href="{{ path('register') }}">Registrarse</a></li>
+                        {% endif %}
+                    </ul>
                 {% endblock %}
 
                 <div style="clear: both">

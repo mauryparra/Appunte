@@ -1,0 +1,46 @@
+{# src/prog3/AppunteBundle/Resources/views/Register/register.html.twig #}
+{% extends '::layout.html.twig' %}
+
+{% block menu %}
+    <ul id="menu">
+        <li><a href="{{ url('prog3_appunte_home') }}">Inicio</a></li>
+        <li><a href="{{ url('login') }}">Iniciar Sesión</a></li>
+    </ul>
+{% endblock %}
+
+{% block titulo %}
+    <div class="header-logo">
+        <h1>Registro de Usuario</h1>
+    </div>
+{% endblock %}
+
+
+{% block main %}
+    <div class="block">
+        <section class="main-block">
+            <article>
+                <section>
+                    <form action="{{ path('register') }}" method="POST">
+                        {{ form_errors(form) }}
+
+                        {{ form_row(form.username) }}<br>
+                        {{ form_row(form.email) }}<br>
+                        {{ form_row(form.password.first, {
+                        'label': 'Contraseña'
+                        }) }} <br>
+
+                        {{ form_row(form.password.second, {
+                        'label': 'Repetir Contraseña'
+                        }) }} <br>
+                        {{ form_row(form.nombre) }}<br>
+                        {{ form_row(form.apellido) }}<br>
+
+                        {{ form_rest(form) }}<br>
+
+                        <input type="submit" value="Registrarse!" />
+                    </form>
+                </section>
+            </article>
+        </section>
+    </div>
+{% endblock %}
